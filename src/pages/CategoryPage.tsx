@@ -52,7 +52,7 @@ const CategoryPage: React.FC = () => {
 
   // Validate platform parameter
   if (!platform || !platformConfig[platform as keyof typeof platformConfig]) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/\" replace />;
   }
 
   const config = platformConfig[platform as keyof typeof platformConfig];
