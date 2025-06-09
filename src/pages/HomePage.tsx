@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useGameStore } from '../store/gameStore';
 import Hero from '../components/Hero';
 import CategoryNavigation from '../components/CategoryNavigation';
@@ -37,9 +37,9 @@ const HomePage: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
-  };
+  }, [setSearchQuery]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

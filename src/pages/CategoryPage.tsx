@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Monitor, Gamepad2, Gamepad } from 'lucide-react';
@@ -72,9 +72,9 @@ const CategoryPage: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
-  };
+  }, [setSearchQuery]);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
