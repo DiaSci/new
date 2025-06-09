@@ -45,13 +45,13 @@ const CategoryNavigation: React.FC = () => {
 
   const isActive = (path: string) => {
     if (path === '/') {
-      return location.pathname === '/' || (!location.pathname.startsWith('/category/'));
+      return location.pathname === '/';
     }
     return location.pathname === path;
   };
 
   return (
-    <div className="bg-[#2C2C2C] border-b border-[#3a3a3a]">
+    <div className="bg-[#2C2C2C] border-b border-[#3a3a3a] sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-1 overflow-x-auto py-4">
           {categories.map((category) => {
