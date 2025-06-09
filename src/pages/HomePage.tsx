@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
                   filteredGames.length > 0 ? (
                     <span>
                       Found <span className="text-white font-semibold">{filteredGames.length}</span> results 
-                      for "<span className="text-[#FF6600]">{searchQuery}</span>"
+                      for "<span className=\"text-[#FF6600]">{searchQuery}</span>"
                     </span>
                   ) : (
                     <span className="text-red-400">
